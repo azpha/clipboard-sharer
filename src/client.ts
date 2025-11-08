@@ -1,7 +1,9 @@
 import clipboardy from "clipboardy";
 import { io } from "socket.io-client";
+import "dotenv/config";
 
-const socket = io("http://localhost:3000");
+console.log(process.env.SOCKET_IP);
+const socket = io(process.env.SOCKET_IP || "http://localhost:3000");
 
 socket.on("connect", () => {
   console.log("socket connected to server");
