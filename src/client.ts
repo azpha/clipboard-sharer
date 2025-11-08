@@ -18,7 +18,6 @@ let lastContent = "";
 function watchClipboard() {
   setInterval(async () => {
     const content = await clipboardy.read();
-    console.log(await clipboardy.read(), content !== lastContent);
     if (content !== lastContent) {
       lastContent = content;
       socket.emit("copy", content);

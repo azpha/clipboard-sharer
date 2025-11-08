@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 io.on("connection", (socket) => {
   console.log("new client connected: " + socket.id);
 
-  io.on("copy", (arg) => {
+  socket.on("copy", (arg) => {
     console.log(arg);
     socket.broadcast.emit("copy", arg);
   });
