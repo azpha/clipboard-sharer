@@ -10,6 +10,10 @@ socket.on("connect", () => {
   watchClipboard();
 });
 
+socket.on("copy", (args) => {
+  console.log(args);
+});
+
 let lastContent = "";
 function watchClipboard() {
   setInterval(async () => {
