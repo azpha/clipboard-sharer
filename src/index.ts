@@ -16,7 +16,6 @@ io.on("connection", (socket) => {
   console.log("new client connected: " + socket.id);
 
   socket.on("copy", (arg) => {
-    console.log(arg);
     socket.broadcast.emit("copy", arg);
   });
 });
